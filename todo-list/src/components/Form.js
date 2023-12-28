@@ -12,7 +12,8 @@ let [input,setInput] = useState('')
         console.log(input);
         const newtodo={
             id:uuid(),
-            todo : input
+            todo : input,
+            checked:false
         }
         props.addTodos(newtodo);
         setInput('');

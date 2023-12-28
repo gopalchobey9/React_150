@@ -6,10 +6,16 @@ const Todo = (props) => {
         props.deleteTodo(id);
     }
 
+    function inputChangeHandler(id){
+        props.checkTodo(id);
+    }
+
   return (
     <div>
-    <li>
-        <p>index:{props.index} --&gt; ID: {props.id}-- Task:{props.todo}  <span onClick={()=>deleteTodoHandler(props.id)}><FaTrashAlt /></span></p>
+    <li style={{textDecoration:`${props.todoItem.checked? 'line-through' : '' }`}}>
+    <input type="checkbox"  onChange={()=>{inputChangeHandler(props.id) }} defaultChecked={props.todoItem.checked}/>
+        <span> ID: {props.id}-- Task:{props.todo} </span>
+         <span onClick={()=>deleteTodoHandler(props.id)}><FaTrashAlt /></span>
 
     </li>
 
