@@ -6,10 +6,15 @@ let [input,setInput] = useState('')
 
     function inputChangeHandler(e){
         setInput(e.target.value)
-    }
+        
+}
     function formSubmitHandler(e){
         e.preventDefault(); // preventing from submiting 
         console.log(input);
+        // if(input.trim().length > 0){}
+        if(input.trim().length === 0){
+          return;
+        }
         const newtodo={
             id:uuid(),
             todo : input,
