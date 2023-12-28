@@ -23,7 +23,7 @@ const GithubUser = (props) => {
             })
         }
         getUser(props.username)
-    },[props.username])
+    },[])
 
 
   return (
