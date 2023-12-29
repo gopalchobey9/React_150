@@ -12,7 +12,7 @@ let dummyQuotes = [
     }
 ]
  async function seedDB(){
-    await Quotes.deleteMany({});
+    await Quotes.deleteMany ({});
     await Quotes.insertMany(dummyQuotes);
     console.log("db sedeed")
 }

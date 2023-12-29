@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-
 const mongoose = require("mongoose")
 const seedDB = require("./seed");
-
+const cors = require("cors");
+const quoteRoute =require("./apis/quoteRoute")
 
 
 mongoose.connect("mongodb://127.0.0.1:27017/Quotes")
@@ -12,8 +12,20 @@ mongoose.connect("mongodb://127.0.0.1:27017/Quotes")
 })
 .catch(err => console)
  
-// seedDB();
+app.use(express.urlencoded({extended:true}));
+app.use(cors({origin: ['http://localhost:3000']}));
+app.use(express.json());
+app.use(quoteRoute);
 
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+
+// seedDB();
 app.get("/", (req,res)=>{
     res.status(200).json({msg:"hello from Quotes app"});
 })
