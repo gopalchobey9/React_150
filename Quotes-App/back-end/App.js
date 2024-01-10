@@ -6,7 +6,7 @@ const cors = require("cors");
 const quoteRoute =require("./apis/quoteRoute")
 
 
-mongoose.connect("mongodb+srv://<username>:t78AW7FOTWo14u4f@cluster0.htizza2.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://gopalchobey9:Do23BT93oUttO0jq@cluster0.n3lohkz.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>{
     console.log("db connected")
 })
