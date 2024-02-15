@@ -15,7 +15,7 @@ const Todo = (props) => {
     <li style={{textDecoration:`${props.todoItem.checked? 'line-through' : '' }`}}>
     <input type="checkbox"  onChange={()=>{inputChangeHandler(props.id) }} defaultChecked={props.todoItem.checked}/>
         <span> ID: {props.id}-- Task:{props.todoItem.todo} </span>
-         <span onClick={()=>deleteTodoHandler(props.id)}><FaTrashAlt /></span>
+         <span onClick={()=>deleteTodoHandler(props.id)}><FaTra shAlt /></span>
 
     </li>
 
